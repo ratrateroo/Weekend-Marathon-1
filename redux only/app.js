@@ -8,10 +8,10 @@ const myReducer = (state = intialState, action) => {
     const newState = { ...state };
 
     if( action.type === 'ADD') {
-        newState.age += 1;
+        newState.age += action.payload;
     }
     if( action.type === 'SUBTRACT') {
-        newState.age -= 1;
+        newState.age -= action.payload;
     }
     
     return newState;
@@ -24,6 +24,6 @@ store.subscribe(() => {
 });
 
 console.log(store.getState());
-store.dispatch({ type: 'ADD' });
-store.dispatch({ type: 'SUBTRACT' });
+store.dispatch({ type: 'ADD' , payload: 10 });
+store.dispatch({ type: 'SUBTRACT' , payload: 5 });
 console.log(store.getState());
