@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './App.css';
 import { connect } from 'react-redux';
+
 
 const Age = () => {
     const [age, setAge] = useState(30);
