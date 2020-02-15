@@ -1,6 +1,6 @@
 import { AGE_UP, AGE_DOWN } from "./actionTypes";
 
-let nextTodoId = 0;
+
 
 export const ageUp = () => ({
   type: AGE_UP,

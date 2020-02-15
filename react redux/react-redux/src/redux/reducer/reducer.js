@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
 
     switch (action.type) {
         case AGE_UP: {
-            newState.age++;
+            newState.age = newState.age + action.payload;
         }
         break;
 

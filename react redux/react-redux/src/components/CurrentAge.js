@@ -1,9 +1,9 @@
 import React from 'react';
-const CurrentAge = () => {   
+const CurrentAge = ({value}) => {   
 
     return (
         <div>
-        <h1>Current Age</h1>
+        <h1>Current Age:</h1>
         </div>
     );
   };
