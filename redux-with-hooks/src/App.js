@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import TodoInput from './components/TodoInput';
-import TodoList from './components/TodoList';
 
 import { Provider } from 'react-redux';
 import store from './redux/store';
+
+import TodoInput from './components/TodoInput';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
