@@ -1,9 +1,23 @@
 import React, { useState } from 'react';
-
+import { useActions } from 'react-redux';
+import { addTodoAction, toggleTodoComplete, deleteTodoAction } from '../redux/actions';
+import uuid from 'uuid/v4';
 const TodoInput = () => {
     const [todo, setTodo] = useState('');
     const onChange = event => {
         setTodo(event.target.value);
+    };
+
+    const addTodo = useActions((todo) => {addTodoAction(todo)});
+
+    const onSubmit = event => {
+        event.preventDefault();
+        if(todo.trim() === '') return;
+        addTodo({
+            id: uuid(),
+            name: todo,
+            complete: false
+        })
     }
 
     return (
@@ -19,4 +33,5 @@ const TodoInput = () => {
             </div>
         </form>
     )
-}
+};
+export default TodoInput;
