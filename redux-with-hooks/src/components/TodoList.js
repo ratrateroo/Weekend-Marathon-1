@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTodoComplete, deleteTodoAction } from '../redux/actions';
 
 
 const TodoList = () => {
 
-    const todos = useSelector((state) => state.todos);
+    const todos = useSelector((states) => states.todos);
   // Get dispatch
   const dispatch = useDispatch();
   // Set reference functions by wrapping action creators with dispatch
