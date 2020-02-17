@@ -17,8 +17,13 @@ class App extends Component {
           <ul>
             {
               this.props.history.map(el => (
-                <li className="historyItem">
-                  {el.age}
+                <li 
+                  onClick={() => {
+                    this.props.onDeleteItem(el.id)
+                  }} 
+                  className="historyItem" 
+                  key={el.id}>
+                  {el.age} 
                 </li>
               ))
             }
@@ -39,7 +44,8 @@ const mapStateToProps = state => {
 const mapDispachToProps = dispatch => {
   return {
     onAgeUp: () => dispatch({ type: "AGE_UP", value: 1 }),
-    onAgeDown: () => dispatch({ type: "AGE_DOWN", value: 1 })
+    onAgeDown: () => dispatch({ type: "AGE_DOWN", value: 1 }),
+    onDeleteItem: (id) => dispatch({type: "DEL_ITEM", key: id })
   };
 };
 export default connect(

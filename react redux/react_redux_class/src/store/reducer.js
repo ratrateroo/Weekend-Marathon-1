@@ -1,3 +1,4 @@
+import uuid from 'uuid';
 const initialState = {
     age:20,
     history: []
@@ -11,14 +12,14 @@ const reducer = (state=initialState, action) => {
             return {
                 ...state,
                 age: state.age + action.value,
-                history: state.history.concat({ age:state.age + action.value })
+                history: state.history.concat({ id: uuid(), age:state.age + action.value })
             }
         
         case 'AGE_DOWN': 
         return {
             ...state,
             age: state.age + action.value,
-            history: state.history.concat({ age:state.age - action.value })
+            history: state.history.concat({ id: uuid(), age:state.age - action.value })
         }
         default: 
             return newState;
