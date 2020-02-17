@@ -11,6 +11,19 @@ class App extends Component {
         </div>
         <button onClick={this.props.onAgeUp}>Age UP</button>
         <button onClick={this.props.onAgeDown}>Age Down</button>
+        <hr />
+        <h2>History</h2>
+        <div>
+          <ul>
+            {
+              this.props.history.map(el => {
+                <li>
+                  {el.age}
+                </li>
+              })
+            }
+          </ul>
+        </div>
       </div>
     );
   }
@@ -18,7 +31,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    age: state.age
+    age: state.age,
+    history: state.history
   };
 };
 
