@@ -16,11 +16,11 @@ class App extends Component {
         <div>
           <ul>
             {
-              this.props.history.map(el => {
-                <li>
+              this.props.history.map(el => (
+                <li className="historyItem">
                   {el.age}
                 </li>
-              })
+              ))
             }
           </ul>
         </div>

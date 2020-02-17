@@ -23,7 +23,7 @@ const reducer = (state=initialState, action) => {
         default: 
             return newState;
     }
-    return newState;
+    
 };
 
 export default reducer;
