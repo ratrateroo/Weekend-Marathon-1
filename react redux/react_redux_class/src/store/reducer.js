@@ -1,5 +1,6 @@
 const initialState = {
-    age:20
+    age:20,
+    history: []
 };
 
 const reducer = (state=initialState, action) => {
@@ -7,12 +8,18 @@ const reducer = (state=initialState, action) => {
 
     switch(action.type){
         case 'AGE_UP': 
-            newState.age += action.value;
-            break;
+            return {
+                ...state,
+                age: state.age + action.value,
+                history: state.history.concat({ age:state.age + action.value })
+            }
         
         case 'AGE_DOWN': 
-            newState.age -= action.value;
-            break;
+        return {
+            ...state,
+            age: state.age + action.value,
+            history: state.history.concat({ age:state.age - action.value })
+        }
         default: 
             return newState;
     }
