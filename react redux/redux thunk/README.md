@@ -2,9 +2,9 @@
 
 from the command prompt clone the project
 
-* $git clone https://github.com/techsithgit/react-middleware.git
-* $cd react-middleware
+* $git clone https://github.com/techsithgit/react-thunk-project.git
+* $cd react-thunk-project
 * $npm install
 * $npm start
 
-[Watch the Tutorial](https://youtu.be/grZ4BVcFmeA).
+[Watch the Tutorial](https://youtu.be/Sqkm39rqmEg).

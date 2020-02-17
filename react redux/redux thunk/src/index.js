@@ -2,24 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import reducer from "./store/reducer";
+import reducer from "./store/reducers/reducer";
 
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
-const logAction = store => {
-  return next => {
-    return action => {
-      const result = next(action);
-      console.log(
-        `caught in the middleware ${JSON.stringify(store.getState())}`
-      );
-      return result;
-    };
-  };
-};
-
-const store = createStore(reducer, applyMiddleware(logAction));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
