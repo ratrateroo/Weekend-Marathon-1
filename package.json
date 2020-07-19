@@ -29,7 +29,7 @@
     "jsesc": "^2.5.2",
     "json-schema-traverse": "^0.4.1",
     "locate-path": "^2.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "loose-envify": "^1.4.0",
     "mimic-fn": "^1.2.0",
     "minimatch": "^3.0.4",
